@@ -10,6 +10,9 @@ import { Card } from '../components/Card';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
+// TODO: Not exactly sure on what the home page should contain at the moment - need to figure that out.
+
+
 const mydate = new Date();
 const datum = mydate.toDateString();
 

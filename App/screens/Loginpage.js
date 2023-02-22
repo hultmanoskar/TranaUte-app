@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, TextComponent } from 'react-native';
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter'
 import { useState } from 'react';
@@ -9,6 +8,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons'; 
 import { LinearGradient } from 'expo-linear-gradient';
 
+
+//TODO: // Create the auth process and Firebase for the project.
 
 
 const HomeScreen1 = ({navigation}) => {

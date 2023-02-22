@@ -1,4 +1,4 @@
-# TranaUte
+## TranaUte
 # is an outdoor training app. That provides the user with outdoor training places throughout Stockholm. 
 
 # Run 
