@@ -3,12 +3,10 @@ import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-nativ
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo } from '@expo/vector-icons'; 
-import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Signup = ({navigation}) => {
-
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
@@ -26,14 +24,14 @@ return (
 <View style={styles.container}>
 <View style={styles.topView}>
        <Text style={styles.logoText1}>Träna Ute</Text>
-       <Ionicons name="barbell-outline" size={42}></Ionicons>
+       <Ionicons name="barbell-outline" size={40}></Ionicons>
       </View>
       <View style={styles.signupView}>
       <Text style={styles.txtSignup}>Create Account</Text>
       </View>
       <View style={styles.inputView}>
       <View style={styles.icon}>
-      <MaterialIcons name="person" size={24} color="#003f5c" />
+      <MaterialIcons name="person" size={20} color="#003f5c" />
       </View>
         <TextInput
         style={styles.textInput}
@@ -44,7 +42,7 @@ return (
         </View>
         <View style={styles.inputView}>
         <View style={styles.icon}>
-        <MaterialIcons name="email" size={24} color="#003f5c" />
+        <MaterialIcons name="email" size={20} color="#003f5c" />
       </View>
         <TextInput
         style={styles.textInput}
@@ -55,7 +53,7 @@ return (
         </View>
         <View style={styles.inputView}>
         <View style={styles.icon}>
-        <Entypo name="lock" size={24} color="#003f5c" />
+        <Entypo name="lock" size={20} color="#003f5c" />
         </View>
         <TextInput
         style={styles.textInput}
@@ -110,9 +108,7 @@ const styles = StyleSheet.create({
         
     },
     logoText1: {
-fontSize: 42,
-fontWeight: '200',
-fontStyle: "italic",
+fontSize: 32,
 alignSelf: 'center',
 margin: 5
 
@@ -145,9 +141,8 @@ margin: 5
     txtSignup: {
         fontSize: 18,
         alignSelf: "flex-start",
-        fontWeight: 'bold',
-        marginBottom: 8,
-        marginLeft: 4
+        marginBottom: 4,
+        marginLeft: 8
     },
     signupView: { 
         width: '65%'
