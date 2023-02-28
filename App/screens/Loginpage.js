@@ -11,6 +11,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 //TODO: // Create the auth process and Firebase for the project.
 
+//TODO: Firebase project set up 
+//TODO: Auth flow for login
+
 
 
 const HomeScreen1 = ({navigation}) => {
