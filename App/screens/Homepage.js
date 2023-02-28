@@ -36,7 +36,7 @@ function Homepage() {
         {/* <Text style={styles.subHeadline}>{datum}</Text> */}
         <Text style={styles.headline}>Träna Ute</Text>
         <TouchableOpacity>
-        <Ionicons style={styles.icon} name='settings-outline' size='20' color='black' />
+        <Ionicons style={styles.icon} name='settings-outline' size={20} color='black' />
         </TouchableOpacity>
         </View>
         </View>

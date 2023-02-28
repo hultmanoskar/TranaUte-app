@@ -20,7 +20,7 @@ export default function App() {
         component={Loginpage}/>
         <LoginStack.Screen
         name='Signup'
-        component={Signuppage}/>
+        component={Signuppage}/> 
         <LoginStack.Screen
         name='Home'
         component={MyTabs}
