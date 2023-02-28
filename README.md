@@ -1,7 +1,5 @@
 # TranaUte
-# is an outdoor training app. That provides the user with outdoor training places throughout Stockholm. 
-
-#
+// Is an outdoor training app. That provides the user with outdoor training places throughout Stockholm. 
 
 ## Run 
 //  1 - npm use node, 

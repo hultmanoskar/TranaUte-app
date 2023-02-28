@@ -1,10 +1,6 @@
 import * as React from 'react';
-<<<<<<< Updated upstream
-
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, TextComponent } from 'react-native';
-=======
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert} from 'react-native';
->>>>>>> Stashed changes
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter'
 import { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -13,11 +9,9 @@ import { Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-<<<<<<< Updated upstream
-=======
-//TODO: Create the auth process and Firebase for the project.
+//TODO: // Create the auth process and Firebase for the project.
 
->>>>>>> Stashed changes
+
 
 const HomeScreen1 = ({navigation}) => {
 

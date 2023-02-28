@@ -5,7 +5,8 @@ import { Marker } from 'react-native-maps';
 import mapStyle from '../assets/styles/mapStyle.json'
 
 
-
+//TODO:  Get the api to work and display "training-places" on the map. 
+// TODO:  api: "https://apigw.stockholm.se/NoAuth/VirtualhittaserviceDMZ/Rest/serviceunits?&filter[servicetype.id]=122&page[limit]=1500&page[offset]=0&sort=name"
 
     let Region={
         // Coordinates for Stockholm
