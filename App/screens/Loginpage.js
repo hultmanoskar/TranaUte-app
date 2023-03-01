@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, TextComponent } from 'react-native';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert} from 'react-native';
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter'
 import { useState } from 'react';
