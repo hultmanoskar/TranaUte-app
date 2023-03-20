@@ -15,18 +15,18 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 
 
-const HomeScreen1 = ({navigation}) => {
+const Loginpage = ({navigation}) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
   
-  const [fontsLoaded] = useFonts({
+  /* const [fontsLoaded] = useFonts({
   Inter_900Black
   });
   
   if (!fontsLoaded) {
     return null;
-  }
+  } */
   
   const passwordAlert = () => 
   Alert.alert(
@@ -91,11 +91,9 @@ const HomeScreen1 = ({navigation}) => {
            onPress={passwordAlert}>
           <Text style={styles.txtbottom1}>Forgot password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() =>
+            navigation.navigate('Signup')}>
           <Text style={styles.txtbottom}
-           onPress={() =>
-            navigation.navigate('Signup')
-          }
           >Sign up</Text>
         </TouchableOpacity>
         </View>
@@ -189,4 +187,4 @@ const HomeScreen1 = ({navigation}) => {
       },
       })
 
-      export default HomeScreen1;
+      export default Loginpage;

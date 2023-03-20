@@ -12,14 +12,6 @@ const Signup = ({navigation}) => {
   const [password, setPassword] = useState(''); 
   const [username, setUsername] = useState('');
   
-  const [fontsLoaded] = useFonts({
-  Inter_900Black
-  });
-  
-  if (!fontsLoaded) {
-    return null;
-  }
-
 return (
 <View style={styles.container}>
 <View style={styles.topView}>
@@ -73,18 +65,15 @@ return (
           </LinearGradient>
         </View>
         <View style={styles.loginBtnView}>
-      {/*   <Button
-        title="SIGN UP"
-        buttonStyle={{backgroundColor: 'rgba(45, 44, 44, 0.88)', borderRadius: 30, height: 50, padding: 10, borderColor: "black",
-        borderWidth: 2}}
-        titleStyle={{color: "white"}}
-        /> */}
         <View style={styles.bottomView}>
-        <Text onPress={() => navigation.navigate("Home")}
+          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <Text 
         >Already have a account?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => navigation.navigate("Login")}>
         <Text style={styles.txtbottom}
-        onPress={() => navigation.navigate("Login")}
         >Sign in</Text>
+        </TouchableOpacity>
         </View>
         </View>
         </View>
@@ -115,7 +104,6 @@ margin: 5
     },
     logoText: {
         fontSize: 20,
-        fontFamily: 'Inter_900Black',
     },
     inputView: {
         borderRadius: 20,

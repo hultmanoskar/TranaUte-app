@@ -1,29 +1,39 @@
 import React from 'react'
-import { Text, StyleSheet, View,} from 'react-native'
+import { Text, StyleSheet, View, TouchableHighlight, Pressable} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Favourites from '../components/Favourites';
+import Headlines from '../components/Headlines';
+
+
+
+
 
 function Likespage() {
+
   return (
     <SafeAreaView style={styles.container}>
-    <View style={styles.topContainer}>
-    <Text>Likespage</Text>
-    </View>
+   <Headlines text="Mina favoriter" />
+    <Favourites />
     </SafeAreaView>
+    
   )
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'lightgray',
+      backgroundColor: '#FCF8F7',
     },
     topContainer: {
-    alignItems: 'flex-start',
-    height: '20%',
-    backgroundColor: 'white'
    
+   
+    }, btnPress: {
+      color: "black"
+    }, 
+    btnNormal: {
+      color: "red"
     }
 
   });
 
-export default Likespage
+export default Likespage;
