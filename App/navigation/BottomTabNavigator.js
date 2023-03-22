@@ -40,7 +40,7 @@ const Tab = createBottomTabNavigator();
         })}
       >
       <Tab.Screen name="Homepage" component={Homepage} />
-      <Tab.Screen name="Map" component={Mappage} />
+      <Tab.Screen name="Map" component={Mappage}  />
       <Tab.Screen name="Like" component={Likespage} />
     </Tab.Navigator>
     
