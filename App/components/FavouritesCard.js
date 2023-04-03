@@ -8,7 +8,7 @@ import Modal from "./Modal";
 
 
 
-export const FavouritesCard = ({title, description, imgUrl}) => {
+export const FavouritesCard = ({title, description, imgUrl, key, name, location, points, street}) => {
 
     const [active, setActive] = useState(false);
     const handleClick = () => {
@@ -24,7 +24,9 @@ return(
             style={{height: 170, width: 190, borderTopLeftRadius: 10, borderTopRightRadius: 10, opacity:0.8}}
             />
         <Text style={styles.headline}>{title}</Text>
-        <Text style={styles.subHeadline}>{description}</Text>
+        <Text style={styles.subHeadline}>{street}</Text>
+        <Text style={styles.subHeadline}>{points}</Text>
+        <Text style={styles.subHeadline}>{title}</Text>
         <Ionicons name='heart-outline' size={32} style={{position: 'absolute', top: 153, left: 148, right: 0, bottom: 0, color: "black"}} />
         <Ionicons name="heart-sharp" size={28} onPress={handleClick} style={{ position: 'absolute', top: 155, left: 150, right: 0, bottom: 0, color: active ? "#F94F4F" : "#F1EEED"}}/>
        {/* <HeartIcon size={28} onPress={handleClick} style={{ position: 'absolute', top: 155, left: 150, right: 0, bottom: 0, color: active ? "red" : "white"}}/> */}
@@ -52,11 +54,11 @@ shadowRadius: 2,
 elevation: 4,
     },
     headline: {
-    fontSize: 18,fontWeight: "bold",position: 'absolute', top: 10, left: 4, right: 0, bottom: 0, color: "#FFFF"
+    fontSize: 18,fontWeight: "bold",position: 'absolute', top: 10, left: 4, right: 0, bottom: 0, color: "black"
     },
     subHeadline: {
         fontSize: 12,
-        marginVertical: 10, padding: 10
+        marginVertical: 0, paddingHorizontal: 10, paddingVertical: 10
     },
     icon: {
         fontSize: 18,fontWeight: "bold",position: 'absolute', top: 55, left: 150, right: 0, bottom: 0, color: "black", size: 50

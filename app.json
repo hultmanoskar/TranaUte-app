@@ -20,6 +20,12 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+"supportsTablet": true,
+"permissions": [
+  "ACCESS_FINE_LOCATION"
+]
+    },
     "web": {
       "favicon": "./assets/images/favicon.png"
     }
