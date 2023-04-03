@@ -79,3 +79,15 @@
   if (!fontsLoaded) {
     return null;
   }
+
+  {/* <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}>
+</Modal> */}
+
+    {/* <Text>Maps</Text> */}

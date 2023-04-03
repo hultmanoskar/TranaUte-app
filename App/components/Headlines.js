@@ -2,7 +2,9 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { ArrowSmallRightIcon } from 'react-native-heroicons/solid'
 
+
 const Headlines = ({text}) => {
+
   return (
     <View style={styles.categoryView}>
     <Text style={styles.categoryTxt}>{text}</Text>
