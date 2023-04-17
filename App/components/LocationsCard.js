@@ -2,15 +2,19 @@ import React, { useState } from "react"
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native"
 import { StarIcon } from "react-native-heroicons/solid";
 import { MapPinIcon } from "react-native-heroicons/outline";
+import { useNavigation } from "@react-navigation/native";
 
 
 
 
-export const LocationsCard = ({imgUrl, street, standing, title, points}) => {
+export const LocationsCard = ({imgUrl, street, standing, title, points, onPress}) => {
+
+    const navigation = useNavigation();
 
 return(
 
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TrainingPage', { location: gyms })}>
+    
         <View>
          <Image 
             source={{ uri: imgUrl }}

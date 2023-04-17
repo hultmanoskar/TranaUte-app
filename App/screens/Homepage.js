@@ -25,7 +25,7 @@ function Homepage() {
 
 {/* Top View -- Headlines +  InspoCard */}
    <Headlines text="Bli inspirerad" />
-      <Inspo />
+      <Inspo/>
 
       {/* Top View -- Headlines +  Headlines */}
       <Headlines text="Högst rankade"/>

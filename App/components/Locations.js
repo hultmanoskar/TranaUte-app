@@ -1,6 +1,8 @@
 import { View, Text, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { LocationsCard } from './LocationsCard'
+import { useNavigation } from '@react-navigation/native'
+import Trainingpage from '../screens/Trainingpage'
 
 const Locations = () => {
 
@@ -18,7 +20,18 @@ useEffect(() => {
   });
 }, []);
 
+gym.sort((a, b) => b.points - a.points);
 
+const navigation = useNavigation();
+
+const handleCardPress = (title, imgUrl, description, level) => {
+  navigation.navigate('Trainingpage', {
+    title: gym.title,
+    imgUrl: gym.imgUrl,
+    description: description,
+    level: level,
+  });
+};
 
 
   return (
@@ -39,7 +52,15 @@ useEffect(() => {
         street={gyms.street}
         standing={index + 1}
         imgUrl={gyms.imgUrl}
-        />
+        onPress={() =>
+          handleCardPress(
+            gyms.title,
+            gyms.imgUrl,
+            gyms.description,
+            gyms.level
+          )
+        }
+      />
         
         
       ))}
