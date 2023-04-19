@@ -4,8 +4,8 @@ import  MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Marker } from 'react-native-maps';
 import mapStyle from '../assets/styles/mapStyle.json'
 
-//TODO:  Get the api to work and display "training-places" on the map. 
-// TODO:  api: "https://apigw.stockholm.se/NoAuth/VirtualhittaserviceDMZ/Rest/serviceunits?&filter[servicetype.id]=122&page[limit]=1500&page[offset]=0&sort=name"
+
+TODO: // Create showsMyLocationButton in Android.
 
     let Region={
         // Coordinates for Stockholm
@@ -45,16 +45,6 @@ function Mappage() {
     showsMyLocationButton={true}
      >
 
-
-      
-     {/*  <Pressable>
-      </Pressable> */}
-
-    {/*   <Marker
-      coordinate={{latitude: 59.343264248291355, longitude:17.93947952313308}}
-      title={""}
-      onPress={() => Alert.alert("Home!")}
-    />  */}
     {location.map(location => (
         <Marker
           key={location.id}

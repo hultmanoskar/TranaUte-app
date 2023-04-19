@@ -2,8 +2,14 @@ import { View, Text, ScrollView, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import ListCell from '../components/ListCell';
 import { MagnifyingGlassIcon } from "react-native-heroicons/outline";
+import { useNavigation } from '@react-navigation/native';
+
+
+
 
 const Listpage = () => {
+
+    const navigation = useNavigation();
 
     const [searchQuery, setSearchQuery] = useState('');  // searchBar var to filter list
 
@@ -21,13 +27,27 @@ const Listpage = () => {
       });
     }, []);
   
+
+    // Sort list alphabetical
+    location.sort((a, b) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
+
     const filteredLocation = location.filter(location =>
         location.title.toLowerCase().includes(searchQuery.toLowerCase())    // To filter serach
       );
+    const handlePress = (location) => {
+    navigation.navigate('Trainingpage2', { location });
+  }
 
   return (
     
-
 <View style={{backgroundColor: "white", flex: 1}}>
     <ScrollView contentContainerStyle={{
         paddingHorizontal: 0,  
@@ -54,35 +74,21 @@ onChangeText={searchQuery => setSearchQuery(searchQuery)} // set searchQuery sta
         </View>
         </View>
 
-        {filteredLocation.map(location => (
+        {filteredLocation.map((location) => (
+            
+            
         <ListCell
           key={location.id}
           coordinate={{ latitude: location.latitude, longitude: location.longitude }}
           title={location.title}
           points={location.points}
           street={location.street}
+          about={location.about}
+          onPress={() => handlePress(location)}
         />
       ))}
-
-
-        {/* <ListCell title="Test 1" points={2} />
-        <ListCell title="Test 2" points={2} />
-        <ListCell title="Test 3" points={2}/>
-        <ListCell title="Test 4" points={2}/> */}
-
     </ScrollView>
-
 </View>
-
-    
-  /*   <View>
-        <Text>Listpage</Text>
-        {location.map(location => (
-      
-      <Text>{location.title}</Text>
-      
-      ))}
-    </View> */
     
   )
 }

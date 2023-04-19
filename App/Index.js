@@ -6,6 +6,7 @@ import {UserIcon} from "react-native-heroicons/outline";
 import Loginpage from './screens/Loginpage'
 import Signuppage from './screens/Signuppage'
 import Trainingpage from './screens/Trainingpage'
+import Trainingpage2 from './screens/Trainingpage2'
 
 
 
@@ -35,6 +36,11 @@ export default function App() {
         options={{headerShown: false}}
         component={Trainingpage}
           />
+             <LoginStack.Screen
+        name='Trainingpage2'
+        options={{headerShown: false}}
+        component={Trainingpage2}
+        />
            
 
 

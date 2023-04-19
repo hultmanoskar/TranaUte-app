@@ -13,9 +13,8 @@ export const LocationsCard = ({imgUrl, street, standing, title, points, onPress}
 
 return(
 
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TrainingPage', { location: gyms })}>
-    
-        <View>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <View>
          <Image 
             source={{ uri: imgUrl }}
             style={{height: 190, width: 230, borderTopLeftRadius: 8, borderTopRightRadius: 8, opacity:0.8}}
