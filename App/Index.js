@@ -5,6 +5,8 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import {UserIcon} from "react-native-heroicons/outline";
 import Loginpage from './screens/Loginpage'
 import Signuppage from './screens/Signuppage'
+import Trainingpage from './screens/Trainingpage'
+import Trainingpage2 from './screens/Trainingpage2'
 
 
 
@@ -29,6 +31,17 @@ export default function App() {
         component={Signuppage}
         options={{headerShown: false, headerLeft: null,
           gestureEnabled: false, }}/>
+           <LoginStack.Screen
+        name='Trainingpage'
+        options={{headerShown: false}}
+        component={Trainingpage}
+          />
+             <LoginStack.Screen
+        name='Trainingpage2'
+        options={{headerShown: false}}
+        component={Trainingpage2}
+        />
+           
 
 
         <LoginStack.Screen
@@ -46,7 +59,9 @@ export default function App() {
               </TouchableOpacity>
             </View>
           ),
-        }} />
+        }} 
+        />
+       
 
       </LoginStack.Navigator>
       </NavigationContainer>

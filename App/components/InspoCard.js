@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native"
 import React from "react"
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native"
 
@@ -5,9 +6,14 @@ import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native"
 
 
 export const InspoCard = ({title, description, imgUrl, level}) => {
+
+const navigation = useNavigation();
+
 return(
 
-   <TouchableOpacity style={styles.container}>
+   <TouchableOpacity 
+   //onPress={() => navigation.navigate("Trainingpage")}
+   style={styles.container}>
 <View style={styles.topView}>
     <Image
     source={imgUrl}

@@ -3,6 +3,9 @@ import Homepage from "../screens/Homepage";
 import Mappage from "../screens/Mappage";
 import Likespage from "../screens/Likespage";
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Listpage from "../screens/Listpage";
+
+
 
 
 const Tab = createBottomTabNavigator();
@@ -25,6 +28,10 @@ const Tab = createBottomTabNavigator();
               iconName = focused
                ? 'heart-sharp' 
                : 'heart-outline';
+            } else if (route.name === 'List') {
+              iconName = focused
+               ? 'map-sharp' 
+               : 'map-outline';
             } else {
               iconName = focused 
               ? 'location-sharp' 
@@ -39,9 +46,12 @@ const Tab = createBottomTabNavigator();
           
         })}
       >
-      <Tab.Screen name="Homepage" component={Homepage} />
+      <Tab.Screen name="Homepage" component={Homepage} headerShown={true} />
       <Tab.Screen name="Map" component={Mappage}  />
       <Tab.Screen name="Like" component={Likespage} />
+      <Tab.Screen name="List" component={Listpage} headerShown={false} />
+      
+      
     </Tab.Navigator>
     
 
