@@ -5,9 +5,7 @@ import { MapPinIcon } from "react-native-heroicons/outline";
 import { useNavigation } from "@react-navigation/native";
 
 
-
-
-export const LocationsCard = ({imgUrl, street, standing, title, points, onPress}) => {
+export const LocationsCard = ({imgUrl, street, standing, title, points, onPress, about}) => {
 
     const navigation = useNavigation();
 

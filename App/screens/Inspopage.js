@@ -1,12 +1,12 @@
-import { View, Text, SafeAreaView,Button, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { StarIcon } from "react-native-heroicons/solid";
 import { MapPinIcon } from "react-native-heroicons/outline";
 import { Feather } from '@expo/vector-icons';
 
-const Trainingpage = ({ route }) => {
-    const { gyms } = route.params;
+const Gympage = ({ route }) => {
+    const { title, description, imgUrl } = route.params;
     
     const navigation = useNavigation();
 
@@ -20,9 +20,9 @@ const Trainingpage = ({ route }) => {
     showsHorizontalScrollIndicator={false}
     >
         <View style={{ position: 'relative',
-        overflow: 'hidden'}}>
+        /* overflow: 'hidden' */}}>
         <Image
-        source={{ uri: gyms.imgUrl }}
+        source={{ uri: imgUrl }}
         style={styles.image}
             /> 
 
@@ -33,28 +33,22 @@ const Trainingpage = ({ route }) => {
     </TouchableOpacity>
             </View>
             <View style={styles.textView}>
-    <Text style={styles.headline}>{gyms.title}</Text>
+    <Text style={styles.headline}>{title}</Text>
     </View>
     <View style={styles.infoView}>
     <View style={styles.pointsView}>
-    <MapPinIcon size={22} color="gray" opacity={0.8} />
-    <Text style={styles.streetTxt}>{gyms.street}</Text>
+    <MapPinIcon size={22} color="gray" opacity={0.9} />
+    {/* <Text style={styles.streetTxt}>{location.street}</Text> */}
     </View>
     <View style={styles.pointsView}>
     <StarIcon size={24} color="green" opacity={0.5} />
-    <Text style={styles.pointTxt}>{gyms.points}</Text>
+    {/* <Text style={styles.pointTxt}>{location.points}</Text> */}
     </View>
-    <Text style={styles.aboutHeadline}>Om anläggningen:</Text>
-    <Text style={styles.aboutTxt}>{gyms.about}</Text>
+    <Text style={styles.aboutTxt}>Om anläggningen:</Text>
+    {/* <Text style={styles.aboutTxt}>{location.about}</Text> */}
     
     </View>
-    {/* <TouchableOpacity
-    onPress={( )=> navigation.goBack()}
-    style={{backgroundColor: 'red', padding: 10, alignItems: 'baseline', justifyContent: 'center'}}
-    >
-    <Text>Go back</Text>
-    </TouchableOpacity> */}
-     </ScrollView>
+    </ScrollView>
     </View>
    
   )
@@ -64,12 +58,12 @@ const Trainingpage = ({ route }) => {
 const styles = StyleSheet.create({
 
     container: {
-        flex: 1, marginBottom: 20
+        flex: 1
     },
     image: {
         height: 350,
         borderWidth: 0,
-        opacity: 0.9
+        opacity: 0.8
     },
     headline: {
         fontSize: 32,
@@ -93,7 +87,7 @@ color: 'green'
         fontSize: 18, marginLeft: 6
     },
     aboutTxt: {
-        fontSize: 16, marginVertical: 2, marginHorizontal: 6
+        fontSize: 18, marginVertical: 10, fontWeight: 'bold'
     },
     iconContainer: {
         position: 'absolute',
@@ -101,10 +95,9 @@ color: 'green'
         left: 18,
         padding: 10,
         backgroundColor: 'gray', opacity: 0.8, borderRadius: 20
+        
     },
-    aboutHeadline: {
-        fontSize: 16, fontWeight: 'bold', marginVertical: 10, marginHorizontal: 6
-    }
+
 }) 
 
-export default Trainingpage
+export default Gympage

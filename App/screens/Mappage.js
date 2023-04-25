@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Text, StyleSheet, View, Pressable, Alert } from 'react-native'
+import { Text, StyleSheet, View, Alert, Image, TouchableOpacity, Linking, Button} from 'react-native'
 import  MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-import { Marker } from 'react-native-maps';
+import { Marker, Callout } from 'react-native-maps';
 import mapStyle from '../assets/styles/mapStyle.json'
 
 
-TODO: // Create showsMyLocationButton in Android.
+//TODO: // Create showsMyLocationButton in Android.
 
     let Region={
         // Coordinates for Stockholm
@@ -30,6 +30,8 @@ function Mappage() {
       console.log(error);
     });
   }, []);
+  
+  const [showDir, setShowDir] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -50,8 +52,42 @@ function Mappage() {
           key={location.id}
           coordinate={{ latitude: location.latitude, longitude: location.longitude }}
           title={location.title}
-          onPress={() => Alert.alert(location.title)}
+          
+          
+        >
+          <Callout style={{ width: 180, height: 170}}
+            onPress={() => {
+              Alert.alert('Vägbeskrivning', 'Öppna i Google Maps?', [
+                {
+                  text: 'Stäng',
+                  onPress: () => console.log('Stäng btn pressed'),
+                  style: 'destructive',
+                },
+                {
+                  text: 'Ja',
+                  onPress: () => {
+                    console.log('Ja btn Pressed');
+                    const url = `https://www.google.com/maps/search/?api=1&query=${location.title}`;
+                    Linking.openURL(url);
+                  },
+                },
+              ]);
+            }}
+          >
+      <View>
+        <Image source={{ uri: location.imgUrl }} style={{height: 110}} />
+        <Text style={{fontSize: 14, fontWeight: 'bold'}}>{location.title}</Text>
+        <Button
+          title="Hitta hit"
+          onPress={() => {
+            console.log('Button pressed');
+            const url = `https://www.google.com/maps/search/?api=1&query=${location.title}`;
+            Linking.openURL(url);
+          }}
         />
+      </View>
+    </Callout>
+          </Marker>
       ))}
     
 </MapView>
