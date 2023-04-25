@@ -5,14 +5,16 @@ import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native"
 
 
 
+
 export const InspoCard = ({title, description, imgUrl, level, onPress}) => {
+
 
 const navigation = useNavigation();
 
 return(
 
    <TouchableOpacity
-   style={styles.container}>
+style={styles.container}>
 <View style={styles.topView}>
     <Image
     source={imgUrl}

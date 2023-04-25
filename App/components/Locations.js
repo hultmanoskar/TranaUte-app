@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { LocationsCard } from './LocationsCard'
 import { useNavigation } from '@react-navigation/native'
 
-
 const Locations = () => {
 
 const [gym, setGym] = useState([]);

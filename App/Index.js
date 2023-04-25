@@ -9,10 +9,7 @@ import Trainingpage from './screens/Trainingpage'
 import Gympage from './screens/Gympage'
 
 
-
-
 const LoginStack = createNativeStackNavigator();
-
 
 
 export default function App() {
@@ -45,10 +42,8 @@ export default function App() {
         name='Gympage'
         options={{headerShown: false}}
         component={Gympage}
-        />
+           />
            
-
-
         <LoginStack.Screen
         name='Home'
         component={MyTabs}

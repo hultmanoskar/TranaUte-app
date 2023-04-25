@@ -5,7 +5,6 @@ import { Marker, Callout } from 'react-native-maps';
 import mapStyle from '../assets/styles/mapStyle.json'
 
 
-
 //TODO: // Create showsMyLocationButton in Android.
 
     let Region={
