@@ -6,7 +6,7 @@ import {UserIcon} from "react-native-heroicons/outline";
 import Loginpage from './screens/Loginpage'
 import Signuppage from './screens/Signuppage'
 import Trainingpage from './screens/Trainingpage'
-import Trainingpage2 from './screens/Trainingpage2'
+import Gympage from './screens/Gympage'
 
 
 
@@ -19,6 +19,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <LoginStack.Navigator
+     /*   screenOptions={{
+        gestureEnabled: false,
+        gestureDirection: 'horizontal',
+        headerBackVisible: false,
+      }} */
       >
         
         <LoginStack.Screen
@@ -37,9 +42,9 @@ export default function App() {
         component={Trainingpage}
           />
              <LoginStack.Screen
-        name='Trainingpage2'
+        name='Gympage'
         options={{headerShown: false}}
-        component={Trainingpage2}
+        component={Gympage}
         />
            
 
@@ -51,6 +56,7 @@ export default function App() {
           headerShown: true,
           headerLeft: null,
           headerBackVisible: false,
+          gestureDirection: 'horizontal',
           headerTitle: props => (
             <View style={{ flexDirection: "row", justifyContent: 'space-between',flex: 1, marginRight: 40, paddingBottom: 10, alignItems: 'center' }}>
                <Text style={styles.headline}>Träna Ute</Text>

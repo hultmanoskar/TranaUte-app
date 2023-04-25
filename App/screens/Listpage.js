@@ -43,7 +43,7 @@ const Listpage = () => {
         location.title.toLowerCase().includes(searchQuery.toLowerCase())    // To filter serach
       );
     const handlePress = (location) => {
-    navigation.navigate('Trainingpage2', { location });
+    navigation.navigate('Gympage', { location });  // Navigates to Gympage
   }
 
   return (
@@ -64,7 +64,7 @@ const Listpage = () => {
       <View style={{backgroundColor: "#E7E5E5", flexDirection: 'row', padding: 12, margin: 10, borderRadius: 10, marginHorizontal: 12}}>
 <MagnifyingGlassIcon size={20} color={"#898989"} style={{marginHorizontal: 4}} />
 <TextInput placeholderTextColor={"#898989"}
-placeholder='Utegym'
+placeholder='Hitta ditt utegym'
 keyboardType='default'
 keyboardAppearance='default'
 onChangeText={searchQuery => setSearchQuery(searchQuery)} // set searchQuery state variable based on input value

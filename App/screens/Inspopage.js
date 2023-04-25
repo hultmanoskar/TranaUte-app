@@ -5,8 +5,8 @@ import { StarIcon } from "react-native-heroicons/solid";
 import { MapPinIcon } from "react-native-heroicons/outline";
 import { Feather } from '@expo/vector-icons';
 
-const Trainingpage2 = ({ route }) => {
-    const { location } = route.params;
+const Gympage = ({ route }) => {
+    const { title, description, imgUrl } = route.params;
     
     const navigation = useNavigation();
 
@@ -20,9 +20,9 @@ const Trainingpage2 = ({ route }) => {
     showsHorizontalScrollIndicator={false}
     >
         <View style={{ position: 'relative',
-        overflow: 'hidden'}}>
+        /* overflow: 'hidden' */}}>
         <Image
-        source={{ uri: location.imgUrl }}
+        source={{ uri: imgUrl }}
         style={styles.image}
             /> 
 
@@ -33,28 +33,22 @@ const Trainingpage2 = ({ route }) => {
     </TouchableOpacity>
             </View>
             <View style={styles.textView}>
-    <Text style={styles.headline}>{location.title}</Text>
+    <Text style={styles.headline}>{title}</Text>
     </View>
     <View style={styles.infoView}>
     <View style={styles.pointsView}>
     <MapPinIcon size={22} color="gray" opacity={0.9} />
-    <Text style={styles.streetTxt}>{location.street}</Text>
+    {/* <Text style={styles.streetTxt}>{location.street}</Text> */}
     </View>
     <View style={styles.pointsView}>
     <StarIcon size={24} color="green" opacity={0.5} />
-    <Text style={styles.pointTxt}>{location.points}</Text>
+    {/* <Text style={styles.pointTxt}>{location.points}</Text> */}
     </View>
     <Text style={styles.aboutTxt}>Om anläggningen:</Text>
-    <Text style={styles.aboutTxt}>{location.about}</Text>
+    {/* <Text style={styles.aboutTxt}>{location.about}</Text> */}
     
     </View>
-    {/* <TouchableOpacity
-    onPress={( )=> navigation.goBack()}
-    style={{backgroundColor: 'red', padding: 10, alignItems: 'baseline', justifyContent: 'center'}}
-    >
-    <Text>Go back</Text>
-    </TouchableOpacity> */}
-     </ScrollView>
+    </ScrollView>
     </View>
    
   )
@@ -106,4 +100,4 @@ color: 'green'
 
 }) 
 
-export default Trainingpage2
+export default Gympage
