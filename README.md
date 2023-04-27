@@ -12,3 +12,18 @@
 - React Native 
 - Node.js
  
+
+ ## Screenshots
+ -Home Screen
+ ![Screenshot 1](/screenshot/Screenshot_1682534734.png "Home Screen")
+
+
+ ![Screenshot 1](/screenshot/Screenshot_1682534742.png "Map Screen")
+
+
+ ![Screenshot 1](/screenshot/Screenshot_1682534826.png "Search screen")
+
+
+ ![Screenshot 1](/screenshot/Screenshot_1682534981.png "Gym Screen")
+
+ 
