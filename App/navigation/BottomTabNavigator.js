@@ -24,10 +24,10 @@ const Tab = createBottomTabNavigator();
               iconName = focused
                 ? 'home-sharp'
                 : 'home-outline';
-            } else if (route.name === 'Like') {
+           /*  } else if (route.name === 'Like') {
               iconName = focused
                ? 'heart-sharp' 
-               : 'heart-outline';
+               : 'heart-outline'; */
             } else if (route.name === 'List') {
               iconName = focused
                ? 'map-sharp' 
@@ -48,7 +48,7 @@ const Tab = createBottomTabNavigator();
       >
       <Tab.Screen name="Homepage" component={Homepage} headerShown={true} />
       <Tab.Screen name="Map" component={Mappage}  />
-      <Tab.Screen name="Like" component={Likespage} />
+      {/* <Tab.Screen name="Like" component={Likespage} /> */}
       <Tab.Screen name="List" component={Listpage} headerShown={false} />
       
       

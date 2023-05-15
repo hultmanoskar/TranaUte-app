@@ -8,8 +8,8 @@ const Locations = () => {
 const [gym, setGym] = useState([]);
 
 useEffect(() => {
-  fetch('http://192.168.1.247:3000/topLocation')
- // fetch('http://172.16.0.5:3000/topLocation')
+  fetch('http://192.168.1.246:3000/topLocation')
+ //fetch('http://172.16.0.5:3000/topLocation')
   .then(response => response.json())
   .then(data => {
     setGym(data)

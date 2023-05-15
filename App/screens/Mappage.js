@@ -2,7 +2,27 @@ import React, { useEffect, useState } from 'react'
 import { Text, StyleSheet, View, Alert, Image, TouchableOpacity, Linking, Button} from 'react-native'
 import  MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Marker, Callout } from 'react-native-maps';
-import mapStyle from '../assets/styles/mapStyle.json'
+import mapStyle from '../assets/styles/mapStyle.json';
+import { PermissionsAndroid } from 'react-native';
+
+async function requestLocationPermission() {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: 'Appen behöver tillgång till din position',
+        message: 'Acceptera för att appen ska kunna visa din position på kartan.',
+      },
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log('Location permission granted.');
+    } else {
+      console.log('Location permission denied.');
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+}
 
 
 //TODO: // Create showsMyLocationButton in Android.
@@ -16,12 +36,15 @@ import mapStyle from '../assets/styles/mapStyle.json'
     }
 
 function Mappage() {
-
+  useEffect(() => {
+    requestLocationPermission();
+  }, []);
   const [location, setLocation] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.1.247:3000/location')
-   // fetch('http://172.16.0.5:3000/location')
+    //fetch('http://192.168.1.246:3000/location')
+    fetch('http://192.168.1.246:3000/location')
+   //fetch('http://172.16.0.5:3000/location')
     .then(response => response.json())
     .then(data => {
       setLocation(data)
@@ -32,7 +55,6 @@ function Mappage() {
     });
   }, []);
   
-  const [showDir, setShowDir] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -47,6 +69,7 @@ function Mappage() {
     zoomEnabled={true}
     showsMyLocationButton={true}
      >
+
 
     {location.map(location => (
         <Marker
@@ -65,12 +88,13 @@ function Mappage() {
                   style: 'destructive',
                 },
                 {
-                  text: 'Ja',
+                  text: 'Öppna',
                   onPress: () => {
                     console.log('Ja btn Pressed');
                     const url = `https://www.google.com/maps/search/?api=1&query=${location.title}`;
                     Linking.openURL(url);
                   },
+                  style: 'default'
                 },
               ]);
             }}

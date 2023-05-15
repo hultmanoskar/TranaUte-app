@@ -23,7 +23,7 @@ export default function App() {
       }} */
       >
         
-        <LoginStack.Screen
+       {/*  <LoginStack.Screen
         name='Login'
         component={Loginpage}
         options={{headerShown: false, headerLeft: null,
@@ -32,7 +32,7 @@ export default function App() {
         name='Signup'
         component={Signuppage}
         options={{headerShown: false, headerLeft: null,
-          gestureEnabled: false, }}/>
+          gestureEnabled: false, }}/> */}
            <LoginStack.Screen
         name='Trainingpage'
         options={{headerShown: false}}
