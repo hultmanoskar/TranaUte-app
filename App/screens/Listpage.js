@@ -16,7 +16,8 @@ const Listpage = () => {
     const [location, setLocation] = useState([]);
 
     useEffect(() => {
-      fetch('http://192.168.1.247:3000/location')
+      fetch('http://192.168.1.246:3000/topLocation')
+      //fetch('http://192.168.1.247:3000/location')
       //fetch('http://172.16.0.5:3000/location')
       .then(response => response.json())
       .then(data => {
