@@ -6,7 +6,7 @@ import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native"
 
 
 
-export const InspoCard = ({title, description, imgUrl, level, onPress}) => {
+export const InspoCard = ({title, description, imgUrl, level, txtImage, mainTxt, onPress }) => {
 
 
 const navigation = useNavigation();
@@ -14,10 +14,10 @@ const navigation = useNavigation();
 return(
 
    <TouchableOpacity
-style={styles.container}>
+style={styles.container} onPress={onPress}>
 <View style={styles.topView}>
     <Image
-    source={imgUrl}
+    source={{uri: imgUrl}}
             style={styles.cardImage}/>
             <View style={{position: 'absolute', top: 52, left: 5, right: 0, bottom: 0, color: "#FFFF", backgroundColor: "#DCD8D8", width: 80, height: 28, borderRadius: 8, justifyContent: "center", alignItems: "center", borderColor: '#AFA9A9', borderWidth: 2}}>
            <Text style={styles.subHeadline}>{level}</Text>

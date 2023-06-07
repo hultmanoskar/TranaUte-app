@@ -36,15 +36,15 @@ async function requestLocationPermission() {
     }
 
 function Mappage() {
-  useEffect(() => {
+ /*  useEffect(() => {
     requestLocationPermission();
-  }, []);
+  }, []); */
   const [location, setLocation] = useState([]);
 
   useEffect(() => {
     //fetch('http://192.168.1.246:3000/location')
-    fetch('http://192.168.1.246:3000/location')
-   //fetch('http://172.16.0.5:3000/location')
+    //fetch('http://192.168.1.246:3000/location')
+   fetch('http://172.16.0.5:3000/location')
     .then(response => response.json())
     .then(data => {
       setLocation(data)
@@ -79,7 +79,7 @@ function Mappage() {
           
           
         >
-          <Callout style={{ width: 180, height: 170}}
+          <Callout style={{ width: 170, height: 190}}
             onPress={() => {
               Alert.alert('Vägbeskrivning', 'Öppna i Google Maps?', [
                 {
@@ -100,16 +100,20 @@ function Mappage() {
             }}
           >
       <View>
-        <Image source={{ uri: location.imgUrl }} style={{height: 110}} />
+        <Image source={{ uri: location.imgUrl }} style={{height: 140}} />
         <Text style={{fontSize: 14, fontWeight: 'bold'}}>{location.title}</Text>
-        <Button
+        <View style={{backgroundColor: 'green', opacity: 0.5, padding: 4, borderRadius: 2, alignItems: 'center'}}>
+        <Text style={{fontSize: 14, color: '#FFFF'}}>Hitta hit</Text>
+        </View>
+       {/*   <Button
+         style={{fontSize: 20}}
           title="Hitta hit"
           onPress={() => {
             console.log('Button pressed');
             const url = `https://www.google.com/maps/search/?api=1&query=${location.title}`;
             Linking.openURL(url);
           }}
-        />
+        />  */}
       </View>
     </Callout>
           </Marker>

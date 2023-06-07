@@ -7,6 +7,7 @@ import Loginpage from './screens/Loginpage'
 import Signuppage from './screens/Signuppage'
 import Trainingpage from './screens/Trainingpage'
 import Gympage from './screens/Gympage'
+import Inspopage from './screens/Inspopage';
 
 
 const LoginStack = createNativeStackNavigator();
@@ -32,17 +33,8 @@ export default function App() {
         name='Signup'
         component={Signuppage}
         options={{headerShown: false, headerLeft: null,
-          gestureEnabled: false, }}/> */}
-           <LoginStack.Screen
-        name='Trainingpage'
-        options={{headerShown: false}}
-        component={Trainingpage}
-          />
-             <LoginStack.Screen
-        name='Gympage'
-        options={{headerShown: false}}
-        component={Gympage}
-           />
+          gestureEnabled: false, }}/>  */}
+       
            
         <LoginStack.Screen
         name='Home'
@@ -62,7 +54,21 @@ export default function App() {
           ),
         }} 
         />
-       
+           <LoginStack.Screen
+        name='Trainingpage'
+        options={{headerShown: false}}
+        component={Trainingpage}
+          />
+             <LoginStack.Screen
+        name='Gympage'
+        options={{headerShown: false}}
+        component={Gympage}
+           />
+               <LoginStack.Screen
+        name='Inspopage'
+        options={{headerShown: false}}
+        component={Inspopage}
+           />
 
       </LoginStack.Navigator>
       </NavigationContainer>

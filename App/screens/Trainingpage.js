@@ -6,6 +6,7 @@ import { MapPinIcon } from "react-native-heroicons/outline";
 import { Feather } from '@expo/vector-icons';
 
 const Trainingpage = ({ route }) => {
+   
     const { gyms } = route.params;
     
     const navigation = useNavigation();

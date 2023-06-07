@@ -1,12 +1,13 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView,Button, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { StarIcon } from "react-native-heroicons/solid";
 import { MapPinIcon } from "react-native-heroicons/outline";
 import { Feather } from '@expo/vector-icons';
 
-const Gympage = ({ route }) => {
-    const { title, description, imgUrl } = route.params;
+const Inspopage = ({ route }) => {
+   
+    const { challenges } = route.params;
     
     const navigation = useNavigation();
 
@@ -20,9 +21,9 @@ const Gympage = ({ route }) => {
     showsHorizontalScrollIndicator={false}
     >
         <View style={{ position: 'relative',
-        /* overflow: 'hidden' */}}>
+        overflow: 'hidden'}}>
         <Image
-        source={{ uri: imgUrl }}
+        source={{ uri: challenges.imgUrl }}
         style={styles.image}
             /> 
 
@@ -33,22 +34,27 @@ const Gympage = ({ route }) => {
     </TouchableOpacity>
             </View>
             <View style={styles.textView}>
-    <Text style={styles.headline}>{title}</Text>
+    <Text style={styles.headline}>{challenges.title}</Text>
     </View>
     <View style={styles.infoView}>
     <View style={styles.pointsView}>
-    <MapPinIcon size={22} color="gray" opacity={0.9} />
-    {/* <Text style={styles.streetTxt}>{location.street}</Text> */}
+    <Text style={styles.descTxt}>{challenges.description}</Text>
     </View>
-    <View style={styles.pointsView}>
-    <StarIcon size={24} color="green" opacity={0.5} />
-    {/* <Text style={styles.pointTxt}>{location.points}</Text> */}
+    <View style={styles.levelView}>
+
+    <Text style={styles.levelTxt}>{challenges.level}</Text>
     </View>
-    <Text style={styles.aboutTxt}>Om anläggningen:</Text>
-    {/* <Text style={styles.aboutTxt}>{location.about}</Text> */}
+    <Text style={styles.aboutHeadline}>{challenges.mainTxt}</Text>
+    {/* <Text style={styles.aboutTxt}>{gyms.about}</Text> */}
     
     </View>
-    </ScrollView>
+    {/* <TouchableOpacity
+    onPress={( )=> navigation.goBack()}
+    style={{backgroundColor: 'red', padding: 10, alignItems: 'baseline', justifyContent: 'center'}}
+    >
+    <Text>Go back</Text>
+    </TouchableOpacity> */}
+     </ScrollView>
     </View>
    
   )
@@ -58,12 +64,12 @@ const Gympage = ({ route }) => {
 const styles = StyleSheet.create({
 
     container: {
-        flex: 1
+        flex: 1, marginBottom: 20
     },
     image: {
         height: 350,
         borderWidth: 0,
-        opacity: 0.8
+        opacity: 0.9
     },
     headline: {
         fontSize: 32,
@@ -71,23 +77,22 @@ const styles = StyleSheet.create({
     },
     textView: {
         marginTop: 12,
-        alignSelf: 'center', marginBottom: 8, position: 'absolute', top: 130,
+        alignSelf: 'center', marginBottom: 8, position: 'absolute', top: 110,
     },
     infoView: {
-        marginHorizontal: 10, marginVertical: 10
+        marginHorizontal: 10, marginVertical: 12
     },
-    pointTxt: {
-        fontSize: 18, marginLeft: 6,
-color: 'green'
+    levelTxt: {
+        fontSize: 16,
     },
-    pointsView: {
-        flexDirection: 'row', alignItems: 'center', marginVertical: 4
+    levelView: {
+        flexDirection: 'row', alignItems: 'center', marginVertical: 10, marginHorizontal: 2, backgroundColor: "#DCD8D8", width: 90, height: 35, borderRadius: 8, justifyContent: "center", alignItems: "center", borderColor: '#AFA9A9', borderWidth: 2
     },
-    streetTxt: {
-        fontSize: 18, marginLeft: 6
+    descTxt: {
+        fontSize: 20, marginLeft: 6, fontWeight: 'bold'
     },
     aboutTxt: {
-        fontSize: 18, marginVertical: 10, fontWeight: 'bold'
+        fontSize: 16, marginVertical: 2, marginHorizontal: 6
     },
     iconContainer: {
         position: 'absolute',
@@ -95,9 +100,10 @@ color: 'green'
         left: 18,
         padding: 10,
         backgroundColor: 'gray', opacity: 0.8, borderRadius: 20
-        
     },
-
+    aboutHeadline: {
+        fontSize: 16, marginVertical: 10, marginHorizontal: 6
+    }
 }) 
 
-export default Gympage
+export default Inspopage
