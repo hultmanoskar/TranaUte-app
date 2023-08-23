@@ -15,16 +15,16 @@
  
 
  ## Screenshots
- -Home Screen
- ![Screenshot 1](/screenshot/Screenshot_1682534734.png "Home Screen")
+### Home Screen
+<img src="/screenshot/Screenshot_1682534734.png" alt="Home Screen" style="max-width: 300px;">
 
+### Map Screen
+<img src="/screenshot/Screenshot_1682534742.png" alt="Map Screen" style="max-width: 300px;">
 
- ![Screenshot 1](/screenshot/Screenshot_1682534742.png "Map Screen")
+### Search Screen
+<img src="/screenshot/Screenshot_1682534826.png" alt="Search Screen" style="max-width: 300px;">
 
-
- ![Screenshot 1](/screenshot/Screenshot_1682534826.png "Search screen")
-
-
- ![Screenshot 1](/screenshot/Screenshot_1682534981.png "Gym Screen")
+### Gym Screen
+<img src="/screenshot/Screenshot_1682534981.png" alt="Gym Screen" style="max-width: 300px;">
 
  
